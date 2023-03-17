@@ -40,10 +40,26 @@ dependencies:
   url_launcher: ^6.1.9
   open_whatsapp: ^0.0.1
   whatsapp_unilink: ^2.1.0
+  flutter_svg: ^2.0.1
+  sidebarx: ^0.14.0
+  cloud_firestore: ^4.4.2
+  firebase_core: ^2.7.1
+  firebase_storage: ^11.0.13
+  photo_view: ^0.14.0
+  easy_image_viewer: ^1.2.0
+  firebase_auth: ^4.2.10
+  provider: ^6.0.5
+  firebase_admin: ^0.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.12.0
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/merkezLedAppLogo.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -65,8 +81,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/merkezLedLogo.png
     - assets/led.jpg
+    - assets/logo-no-background.svg
+    - assets/logo-no-background.png
+    - assets/merkezledkart.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

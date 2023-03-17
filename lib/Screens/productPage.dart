@@ -1,16 +1,16 @@
+import 'package:easy_image_viewer/easy_image_viewer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:photo_view/photo_view.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class productPage extends StatefulWidget {
-  const productPage({Key? key}) : super(key: key);
+class productPage extends StatelessWidget {
+  productPage({Key? key, this.uzunluk, this.image, this.model, this.fiyat, this.kod, this.led, this.set}) : super(key: key);
 
-  @override
-  State<productPage> createState() => _productPageState();
-}
+  var fiyat, uzunluk, kod, set, model, image, led;
 
-class _productPageState extends State<productPage> {
   @override
   Widget build(BuildContext context) {
 
@@ -20,8 +20,12 @@ class _productPageState extends State<productPage> {
     return Scaffold(
       backgroundColor: const Color(0xff383737),
       appBar: AppBar(
+        toolbarHeight: 60,
         backgroundColor: const Color(0xff383737),
-        title: Image.asset("assets/merkezLedLogo.png"),
+        centerTitle: true,
+        title: SizedBox(
+            height: 50,
+            child: Image.asset("assets/logo-no-background.png")),
       ),
       body: Stack( children: <Widget>[
         ListView(
@@ -31,11 +35,24 @@ class _productPageState extends State<productPage> {
             child: SizedBox(
               width: width-10,
               height: height/3,
-              child:Image.asset("assets/led.jpg", fit: BoxFit.contain,)),
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.black12)
+                ),
+                  child: Image.network(image),
+                  onPressed: () {
+                    showImageViewer(
+                        context,
+                        Image.network(image)
+                            .image,
+                        swipeDismissible: true,
+                        doubleTapZoomable: true);
+                  }),
+            ),
           ),
           Container(
             padding: const EdgeInsets.only(left: 10),
-            child: Text("UE32F5570 D2GE-320SC1 65,8CM ES-035/9 SAMSUNG",
+            child: Text(model,
               style: GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
             ),
           ),
@@ -45,23 +62,54 @@ class _productPageState extends State<productPage> {
             style: GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white70),
                 ),
               ),
+          Padding(padding: const EdgeInsets.only(left: 10, top: 10,),
+            child: Text("MODEL: $model",
+            style: GoogleFonts.inter(color: Colors.white, fontWeight: FontWeight.w500),
+            ),
+          ),
+          Padding(padding: const EdgeInsets.only(left: 10, top: 10,),
+            child: Text("KOD: $kod",
+              style: GoogleFonts.inter(color: Colors.white, fontWeight: FontWeight.w500),
+            ),
+          ),
+          Padding(padding: const EdgeInsets.only(left: 10, top: 10,),
+            child: Text("SET: $set",
+              style: GoogleFonts.inter(color: Colors.white, fontWeight: FontWeight.w500),
+            ),
+          ),
+          Padding(padding: const EdgeInsets.only(left: 10, top: 10,),
+            child: Text("LED SAYISI: $led",
+              style: GoogleFonts.inter(color: Colors.white, fontWeight: FontWeight.w500),
+            ),
+          ),
+          Padding(padding: const EdgeInsets.only(left: 10, top: 10,),
+            child: Text("UZUNLUK: $uzunluk",
+              style: GoogleFonts.inter(color: Colors.white, fontWeight: FontWeight.w500),
+            ),
+          ),
+          Padding(padding: const EdgeInsets.only(left: 10, top: 10,),
+            child: Text("FİYAT: $fiyat₺",
+              style: GoogleFonts.inter(color: Colors.white, fontWeight: FontWeight.w500),
+            ),
+          ),
           Container(
-            padding: const EdgeInsets.only(left: 10, top: 5),
+            padding: const EdgeInsets.only(left: 10, top: 5, right: 10),
             child: TextButton(
               style: ButtonStyle(
                 iconColor: MaterialStateProperty.all<Color>(Colors.white),
                 backgroundColor: MaterialStateProperty.all<Color>(Colors.green.shade700),
               ),
               onPressed: launchWhatsAppUri,
-              child: Row( children: <Widget>[
+              child: Row(
+                  children: <Widget>[
                 const Icon(FontAwesomeIcons.whatsapp),
                 Text("\t Whatsapp üzerinden sipariş oluşturun.",
                 style: GoogleFonts.inter(fontSize: 15, color: Colors.white, fontWeight: FontWeight.w500),
-                )
+                ),
               ]
               ),
             ),
-              )
+              ),
             ],
           ),
         ]

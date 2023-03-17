@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "795034514417",
+    "firebase_url": "https://merkez-led-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "merkez-led",
+    "storage_bucket": "merkez-led.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795034514417:android:63c34f57f90df733204a50",
+        "android_client_info": {
+          "package_name": "com.example.merkezledapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "795034514417-5fa3miu5rj2qb8600qbc63tl2uhd3c0t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.merkezledapp",
+            "certificate_hash": "be33b5b2636f177ba095b2c2080ad2dd06b5a5d3"
+          }
+        },
+        {
+          "client_id": "795034514417-cd5l28uvgdj75hs7d87jhhs7v0h5gsj6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYaagnKLRGsISx3rZDiediNuW-01Ysrrw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "795034514417-cd5l28uvgdj75hs7d87jhhs7v0h5gsj6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
