@@ -125,7 +125,7 @@ showAlertDialog(BuildContext context) {
   // Create AlertDialog
   AlertDialog alert = AlertDialog(
     title: Text("Hesabınız Oluşturuldu!"),
-    content: Text("Hesabınız onaylandıktan sonra giriş yapabilirsiniz."),
+    content: Text("Mail adresinize gelen linki onaylandıktan sonra giriş yapabilirsiniz."),
     actions: [
       okButton,
     ],

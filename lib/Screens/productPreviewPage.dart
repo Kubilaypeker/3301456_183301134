@@ -1,12 +1,17 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:merkezledapp/Screens/homePage.dart';
+import 'package:merkezledapp/authenticationService.dart';
+import 'package:merkezledapp/main.dart';
 import 'package:merkezledapp/widgets/drawerWidget.dart';
 import 'package:merkezledapp/widgets/searchBarStreamBuilder.dart';
 import 'package:merkezledapp/widgets/searchingPreviewWidget.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:merkezledapp/widgets/scrollViewWidget.dart';
 
@@ -24,6 +29,7 @@ class _productPreviewPageState extends State<productPreviewPage> {
   String modelNameText = "";
 
 
+
   initSearchingPost(String searchText) {
     postDocumentsList = FirebaseFirestore.instance.collection("Ledler")
         .where("Model", isGreaterThanOrEqualTo: searchText).get();
@@ -36,6 +42,11 @@ class _productPreviewPageState extends State<productPreviewPage> {
   @override
   Widget build(BuildContext context) {
 
+    FirebaseFirestore db = FirebaseFirestore.instance;
+
+    final markaRef = db
+        .collection("Reklam");
+
     return Scaffold(
       backgroundColor: const Color(0xff383737),
       appBar: AppBar(
@@ -45,6 +56,17 @@ class _productPreviewPageState extends State<productPreviewPage> {
         title: SizedBox(
           height: 50,
             child: Image.asset('assets/logo-no-background.png',)),
+        actions: <IconButton>[
+          IconButton(onPressed: () {
+            context.read<AuthenticationService>().signOut();
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => AuthenticationWrapper(),
+              ),
+            );
+          },
+              icon:const Icon(Icons.logout))
+        ],
       ),
       drawer: drawerWidget(),
       body: Stack(
@@ -57,6 +79,32 @@ class _productPreviewPageState extends State<productPreviewPage> {
             children: <Widget>[
               SizedBox(
                 height: 50,
+              ),
+              Container(
+                child: StreamBuilder(
+                stream: markaRef.snapshots(),
+        builder: (context, AsyncSnapshot<QuerySnapshot> querySnapshot) {
+          if (querySnapshot.hasData) {
+          return CarouselSlider.builder(
+            options: CarouselOptions(
+              autoPlay: true,
+              enlargeCenterPage: true,
+              autoPlayInterval: const Duration(seconds: 4),
+            ),
+            itemCount: querySnapshot.data!.docs.length,
+            itemBuilder: (context, int index, int index2) {
+              final DocumentSnapshot documentSnapshot = querySnapshot.data!.docs[index];
+              return Image.network(documentSnapshot["image"], fit: BoxFit.fill,);
+                },
+              );
+            }
+          else {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        }
+      ),
               ),
               scrollView(
                 marka: "Arçelik",

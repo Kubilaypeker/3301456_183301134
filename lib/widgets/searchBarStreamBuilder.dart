@@ -13,7 +13,6 @@ class searchStreamBuilder extends StatefulWidget {
 
 class _searchStreamBuilderState extends State<searchStreamBuilder> {
 
-
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot> (
