@@ -44,6 +44,10 @@ class _searchStreamBuilderState extends State<searchStreamBuilder> {
                   led: documentSnapshot["Led"],
                 );
               }
+
+              else {
+                return const SizedBox(height: 0);
+              }
             }
         );
       },
