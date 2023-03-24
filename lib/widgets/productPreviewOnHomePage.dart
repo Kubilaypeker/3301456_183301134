@@ -23,12 +23,13 @@ class productPreview extends StatelessWidget {
 
     return  Container(
       alignment: Alignment.centerLeft,
-      height: 244,
+      height: 230,
         child: StreamBuilder(
         stream: markaRef.snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> querySnapshot) {
           if (querySnapshot.hasData) {
             return ListView.builder(
+
               shrinkWrap: true,
               physics: ClampingScrollPhysics(),
               scrollDirection: Axis.horizontal,

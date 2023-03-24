@@ -17,18 +17,6 @@ class drawerWidget extends StatelessWidget {
               height: 45,
               child: Image.asset('assets/logo-no-background.png',)
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 10, top: 10),
-            child: TextButton(onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => homePage()),
-              );
-            },
-                child: Text("Ana Sayfa", style: GoogleFonts.inter(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 18),
-                )
-            ),
-          ),
 
           Padding(
             padding: const EdgeInsets.only(left: 10, top: 10),

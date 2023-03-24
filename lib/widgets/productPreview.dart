@@ -14,13 +14,16 @@ class product extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
 
     return Container(
+      padding: EdgeInsets.symmetric(horizontal: 5),
+        child: Container(
       decoration: BoxDecoration(
-        color: Colors.black12, borderRadius: BorderRadius.circular(10)
+        color: Colors.black12,
       ),
         child: SizedBox(
-      height: height/3,
+      height: 190,
         width: (width-10)/2,
-        child: IconButton( onPressed: () {
+        child: IconButton(
+            onPressed: () {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => productPage(
@@ -37,13 +40,28 @@ class product extends StatelessWidget {
         icon:Column(
       children: <Widget>[
         Container(
-          height: 180,
+          height: 120,
             child: Image.network(image,)
         ),
-        Text(model,
+        SizedBox(
+          height: 50,
+          child:Text(model,
         style: GoogleFonts.inter(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 13)),
-      ],
-    ))
-    ));
+        ),
+        Container(
+          padding: EdgeInsets.only(top: 5),
+          child: SizedBox(
+          height: 20,
+          child:Text("Fiyat: $fiyat₺",
+            style: GoogleFonts.inter(color: Colors.white70, fontWeight: FontWeight.w500, fontSize: 13)
+                     ),
+                    ),
+                  ),
+                ],
+              )
+            )
+          )
+        ),
+    );
   }
 }

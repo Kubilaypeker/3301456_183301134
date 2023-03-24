@@ -89,7 +89,7 @@ class _productPreviewPageState extends State<productPreviewPage> {
             options: CarouselOptions(
               autoPlay: true,
               enlargeCenterPage: true,
-              autoPlayInterval: const Duration(seconds: 4),
+              autoPlayInterval: const Duration(seconds: 3),
             ),
             itemCount: querySnapshot.data!.docs.length,
             itemBuilder: (context, int index, int index2) {
@@ -109,18 +109,26 @@ class _productPreviewPageState extends State<productPreviewPage> {
               scrollView(
                 marka: "Arçelik",
               ),
+              scrollView(marka: "Altus"),
               scrollView(
                 marka: "Awox",
               ),
+              scrollView(marka: "Axen"),
               scrollView(
                 marka: "Beko",
               ),
+              scrollView(marka: "Botech"),
+              scrollView(marka: "Finlux"),
+              scrollView(marka: "Grundig"),
+              scrollView(marka: "Hi-level"),
               scrollView(
                 marka: "Homstar",
               ),
+              scrollView(marka: "Jameson"),
               scrollView(
                 marka: "LG",
               ),
+              scrollView(marka: "NEXON"),
               scrollView(
                 marka: "Next",
               ),
@@ -136,21 +144,30 @@ class _productPreviewPageState extends State<productPreviewPage> {
               scrollView(
                 marka: "Redline",
               ),
+              scrollView(marka: "Regal"),
+              scrollView(marka: "Saba"),
               scrollView(
                 marka: "Samsung",
               ),
               scrollView(
                 marka: "Sanyo",
               ),
+              scrollView(marka: "Seg"),
+              scrollView(marka: "Skytech"),
               scrollView(
                 marka: "Sonny",
               ),
               scrollView(
                 marka: "Sunny",
               ),
+              scrollView(marka: "Techwood"),
+              scrollView(marka: "Telefox"),
+              scrollView(marka: "Telefunken"),
+              scrollView(marka: "Toshiba"),
               scrollView(
                 marka: "Vestel",
               ),
+              scrollView(marka: "WOON"),
               scrollView(
                 marka: "Yumatu",
               ),
@@ -178,21 +195,37 @@ class _productPreviewPageState extends State<productPreviewPage> {
                       shrinkWrap: true,
                       children: [
                         searchStreamBuilder(model: "Arçelik", modelName: modelNameText,),
+                        searchStreamBuilder(model: "Altus", modelName: modelNameText,),
                         searchStreamBuilder(model: "Awox", modelName: modelNameText,),
+                        searchStreamBuilder(model: "Axen", modelName: modelNameText,),
                         searchStreamBuilder(model: "Beko", modelName: modelNameText,),
+                        searchStreamBuilder(model: "Botech", modelName: modelNameText,),
+                        searchStreamBuilder(model: "Finlux", modelName: modelNameText,),
+                        searchStreamBuilder(model: "Grundig", modelName: modelNameText,),
+                        searchStreamBuilder(model: "Hi-level", modelName: modelNameText,),
                         searchStreamBuilder(model: "Homstar", modelName: modelNameText,),
+                        searchStreamBuilder(model: "Jameson", modelName: modelNameText,),
                         searchStreamBuilder(model: "LG", modelName: modelNameText,),
+                        searchStreamBuilder(model: "Nexon", modelName: modelNameText,),
                         searchStreamBuilder(model: "Next", modelName: modelNameText,),
                         searchStreamBuilder(model: "Nordmande", modelName: modelNameText,),
                         searchStreamBuilder(model: "Philips", modelName: modelNameText,),
                         searchStreamBuilder(model: "Premier", modelName: modelNameText,),
                         searchStreamBuilder(model: "Redline", modelName: modelNameText,),
+                        searchStreamBuilder(model: "Regal", modelName: modelNameText,),
+                        searchStreamBuilder(model: "Saba", modelName: modelNameText,),
                         searchStreamBuilder(model: "Samsung", modelName: modelNameText,),
                         searchStreamBuilder(model: "Sanyo", modelName: modelNameText,),
+                        searchStreamBuilder(model: "Seg", modelName: modelNameText,),
                         searchStreamBuilder(model: "Skytech", modelName: modelNameText,),
                         searchStreamBuilder(model: "Sonny", modelName: modelNameText,),
                         searchStreamBuilder(model: "Sunny", modelName: modelNameText,),
+                        searchStreamBuilder(model: "Techwood", modelName: modelNameText,),
+                        searchStreamBuilder(model: "Telefox", modelName: modelNameText,),
+                        searchStreamBuilder(model: "Telefunken", modelName: modelNameText,),
+                        searchStreamBuilder(model: "Toshiba", modelName: modelNameText,),
                         searchStreamBuilder(model: "Vestel", modelName: modelNameText,),
+                        searchStreamBuilder(model: "WOON", modelName: modelNameText,),
                         searchStreamBuilder(model: "Yumatu", modelName: modelNameText,),
                       ],
                     )
