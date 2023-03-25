@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:merkezledapp/Screens/signInPage.dart';
 import 'package:merkezledapp/authenticationService.dart';
 import 'package:provider/provider.dart';
@@ -43,13 +44,13 @@ class _signUpScreenState extends State<signUpScreen> {
                   }
                   return null;
                 },
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black),
+                style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black),
                 controller: email,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 10),
                     border: InputBorder.none,
                     hintText: "\tE-mail",
-                    hintStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black54)
+                    hintStyle: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black54)
                 ),
               ),
             ),
@@ -64,13 +65,13 @@ class _signUpScreenState extends State<signUpScreen> {
               ),
               child: TextFormField(
                 obscureText: true,
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black),
+                style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black),
                 controller: password,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 10),
                     border: InputBorder.none,
                     hintText: "\tŞifre",
-                    hintStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black54)
+                    hintStyle: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black54)
                 ),
               ),
             ),
@@ -89,8 +90,8 @@ class _signUpScreenState extends State<signUpScreen> {
                 }
                 );
               },
-              child: const Text("KAYIT OL",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),
+              child: Text("KAYIT OL",
+                style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),
               ),
             ),
           ),
@@ -100,8 +101,8 @@ class _signUpScreenState extends State<signUpScreen> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const loginPage()));
               },
-              child: const Text("Hesabınız var ise giriş yapın.",
-                style: TextStyle(
+              child: Text("Hesabınız var ise giriş yapın.",
+                style: GoogleFonts.poppins(
                     color: Color(0xff0E469B)
                 ),
               ),
@@ -119,6 +120,8 @@ showAlertDialog(BuildContext context) {
     child: Text("Tamam"),
     onPressed: () {
       Navigator.of(context).pop();
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const loginPage()));
     },
   );
 

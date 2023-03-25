@@ -84,7 +84,9 @@ class motherBoardPage extends StatelessWidget {
                     iconColor: MaterialStateProperty.all<Color>(Colors.white),
                     backgroundColor: MaterialStateProperty.all<Color>(Colors.green.shade700),
                   ),
-                  onPressed: launchWhatsAppUri,
+                  onPressed: () {
+                    launchWhatsAppUri(model);
+                },
                   child: Row(
                       children: <Widget>[
                         const Icon(FontAwesomeIcons.whatsapp),
@@ -103,8 +105,8 @@ class motherBoardPage extends StatelessWidget {
   }
 }
 
-Future<void> launchWhatsAppUri() async {
-  String url = "https://api.whatsapp.com/send/?phone=(905346391379)";
+Future<void> launchWhatsAppUri(String model) async {
+  String url = "https://api.whatsapp.com/send/?phone=(905346391379)&text=($model+ ile ilgili bilgi almak istiyorum.)";
   await launchUrl(Uri.parse(url),
       mode: LaunchMode.externalApplication);
 }

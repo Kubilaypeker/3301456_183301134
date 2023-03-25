@@ -44,6 +44,9 @@ class _searchStreamBuilderState extends State<searchMotherBoardStreamBuilder> {
                   marka: documentSnapshot["Marka"],
                 );
               }
+              else {
+                return SizedBox(height: 0,);
+              }
             }
         );
       },

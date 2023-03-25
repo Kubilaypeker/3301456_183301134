@@ -12,13 +12,15 @@ import 'package:merkezledapp/widgets/searchMotherBoard.dart';
 import 'package:merkezledapp/widgets/searchMotherBoardWidget.dart';
 
 class motherBoardGridViewScreen extends StatefulWidget {
-  const motherBoardGridViewScreen({Key? key}) : super(key: key);
+  motherBoardGridViewScreen({Key? key, this.product}) : super(key: key);
 
+  var product;
   @override
   State<motherBoardGridViewScreen> createState() => _motherBoardGridViewScreenState();
 }
 
 class _motherBoardGridViewScreenState extends State<motherBoardGridViewScreen> {
+
 
   String modelNameText = "";
 
@@ -28,7 +30,7 @@ class _motherBoardGridViewScreenState extends State<motherBoardGridViewScreen> {
     FirebaseFirestore db = FirebaseFirestore.instance;
 
     final markaRef = db
-        .collection("Anakartlar");
+        .collection(widget.product);
 
     return Scaffold(
       backgroundColor: const Color(0xff383737),
@@ -49,7 +51,7 @@ class _motherBoardGridViewScreenState extends State<motherBoardGridViewScreen> {
                   Container(
                     alignment: Alignment.centerLeft,
                     padding: const EdgeInsets.only(left: 20, top: 20, bottom: 10),
-                    child: Text("Anakartlar",
+                    child: Text(widget.product + "'lar",
                       style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white,),
                     ),
                   ),
@@ -57,9 +59,24 @@ class _motherBoardGridViewScreenState extends State<motherBoardGridViewScreen> {
                     child: StreamBuilder(
                       stream: markaRef.snapshots(),
                       builder: (context, AsyncSnapshot<QuerySnapshot> querySnapshot) {
-                        if (querySnapshot.hasData) {
-                          return GridView.builder(
+                        if (querySnapshot.data!.docs.length == 0 ) {
+                        return Center(
+                        child: Column(
+                        children: [
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 80, vertical: 20),
+                          child: Image.asset("assets/logo-no-background.png"),
+                        ),
+                        Text("Ürünlerimiz en kısa sürede eklenecektir",
+                          style: GoogleFonts.poppins(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white,),
+                                ),
+                              ],
+                            ),
+                          );
+                        }
 
+                        else if (querySnapshot.hasData) {
+                          return GridView.builder(
                             itemCount: querySnapshot.data!.docs.length,
                             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                               childAspectRatio: 165/220,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:merkezledapp/Screens/forgotPassword.dart';
 import 'package:merkezledapp/Screens/signUpPage.dart';
 import 'package:provider/provider.dart';
 import 'package:merkezledapp/authenticationService.dart';
@@ -38,13 +39,13 @@ class loginPageState extends State<loginPage> {
                   color: Colors.white
               ),
               child: TextFormField(
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black),
+                style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black),
                 controller: userEmail,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 15),
                     border: InputBorder.none,
                     hintText: "E-mail",
-                    hintStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black54)
+                    hintStyle: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black54)
                 ),
               ),
             ),
@@ -59,13 +60,13 @@ class loginPageState extends State<loginPage> {
               ),
               child: TextFormField(
                 obscureText: true,
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black),
+                style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black),
                 controller: userPassword,
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                     contentPadding: EdgeInsets.only(left: 15),
                     border: InputBorder.none,
                     hintText: "Şifre",
-                    hintStyle: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black54)
+                    hintStyle: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black54)
                 ),
               ),
             ),
@@ -82,8 +83,8 @@ class loginPageState extends State<loginPage> {
                   password: userPassword.text,
                 );
               },
-              child: const Text("GİRİŞ YAP",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),
+              child: Text("GİRİŞ YAP",
+                style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),
               ),
             ),
           ),
@@ -93,8 +94,21 @@ class loginPageState extends State<loginPage> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const signUpScreen()));
               },
-              child: const Text("Hesabınız yok mu?",
-                style: TextStyle(
+              child: Text("Hesabınız yok mu?",
+                style: GoogleFonts.poppins(
+                    color: Color(0xff0E469B)
+                ),
+              ),
+            ),
+          ),
+          Container(
+            child: TextButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const forgotPassword()));
+              },
+              child: Text("Şifremi Unuttum",
+                style: GoogleFonts.poppins(
                     color: Color(0xff0E469B)
                 ),
               ),
