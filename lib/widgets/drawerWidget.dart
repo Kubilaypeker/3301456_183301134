@@ -50,7 +50,7 @@ class drawerWidget extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => motherBoardGridViewScreen(
-                    product: "T-Con",
+                    product: "T-Con'lar",
                   ))
               );
             },
@@ -64,7 +64,7 @@ class drawerWidget extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => motherBoardGridViewScreen(
-                    product: "Besleme",
+                    product: "Beslemeler",
                   ))
               );
             },
@@ -78,7 +78,7 @@ class drawerWidget extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => motherBoardGridViewScreen(
-                    product: "Inverter",
+                    product: "Inverterlar",
                   ))
               );
             },
@@ -92,7 +92,7 @@ class drawerWidget extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => motherBoardGridViewScreen(
-                    product: "Askı aparat",
+                    product: "Askı aparatları",
                   ))
               );
             },
@@ -106,7 +106,7 @@ class drawerWidget extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => motherBoardGridViewScreen(
-                    product: "Ekran Koruyucu",
+                    product: "Ekran Koruyucuları",
                   ))
               );
             },
@@ -120,7 +120,7 @@ class drawerWidget extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => motherBoardGridViewScreen(
-                    product: "Uydu alıcı",
+                    product: "Uydu alıcıları",
                   ))
               );
             },
@@ -134,7 +134,7 @@ class drawerWidget extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => motherBoardGridViewScreen(
-                    product: "Kablo",
+                    product: "Kablolar",
                   ))
               );
             },
@@ -148,7 +148,7 @@ class drawerWidget extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => motherBoardGridViewScreen(
-                    product: "LNB",
+                    product: "LNB'ler",
                   ))
               );
             },
@@ -162,7 +162,7 @@ class drawerWidget extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => motherBoardGridViewScreen(
-                    product: "Sarf Malzeme",
+                    product: "Sarf Malzemeler",
                   ))
               );
             },

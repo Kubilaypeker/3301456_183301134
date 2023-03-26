@@ -4,9 +4,10 @@ import 'package:merkezledapp/widgets/searchMotherBoardWidget.dart';
 import 'package:merkezledapp/widgets/searchingPreviewWidget.dart';
 
 class searchMotherBoardStreamBuilder extends StatefulWidget {
-  searchMotherBoardStreamBuilder({Key? key, required this.modelName}) : super(key: key);
+  searchMotherBoardStreamBuilder({Key? key, required this.modelName, required this.category}) : super(key: key);
 
   var modelName;
+  var category;
 
   @override
   State<searchMotherBoardStreamBuilder> createState() => _searchStreamBuilderState();
@@ -18,7 +19,7 @@ class _searchStreamBuilderState extends State<searchMotherBoardStreamBuilder> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot> (
-      stream: FirebaseFirestore.instance.collection("Anakartlar").snapshots(),
+      stream: FirebaseFirestore.instance.collection(widget.category).snapshots(),
       builder: (context, AsyncSnapshot<QuerySnapshot> querySnapshot) {
         return (querySnapshot.connectionState == ConnectionState.waiting)
             ? const SizedBox(

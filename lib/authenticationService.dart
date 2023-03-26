@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class AuthenticationService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
@@ -20,8 +21,18 @@ class AuthenticationService {
         password: password,
       );
     } on FirebaseAuthException catch  (e) {
-      print('Failed with error code: ${e.code}');
-      print(e.message);
+      if(e.code == "invalid-email") {
+        print("Hata kodu: "+ e.code);
+        Fluttertoast.showToast(msg: "Lütfen geçerli bir e-mail adresi giriniz.");
+      }
+      else if(e.code == "user-not-found") {
+        print("Hata kodu: "+ e.code);
+        Fluttertoast.showToast(msg: "Kullanıcı bulunamadı!");
+      }
+      else if(e.code == "wrong-password") {
+        print("Hata kodu: "+ e.code);
+        Fluttertoast.showToast(msg: "Kullanıcı adı ve şifrenizi kontrol ederek tekrar deneyiniz.");
+      }
     }
   }
 
@@ -35,6 +46,7 @@ class AuthenticationService {
       print("kullnıcı: $_firebaseAuth.currentUser");
       return "Kayıt Oldunuz";
     } on FirebaseAuthException catch (e) {
+      print("HATA KODU:" + e.code);
       return e.message;
     }
   }

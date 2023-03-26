@@ -83,12 +83,10 @@ class _signUpScreenState extends State<signUpScreen> {
                   backgroundColor: MaterialStateProperty.all<Color>(const Color(0xff0E469B))
               ),
               onPressed: () {
-                  FirebaseAuth.instance.createUserWithEmailAndPassword(email: email.text, password: password.text).then((value) {print("Hesabınız Oluşturuldu!");
+                  context.read<AuthenticationService>().signUp(email: email.text, password: password.text);
                   context.read<AuthenticationService>().verifyUser();
                   context.read<AuthenticationService>().signOut();
                   showAlertDialog(context);
-                }
-                );
               },
               child: Text("KAYIT OL",
                 style: GoogleFonts.poppins(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white),

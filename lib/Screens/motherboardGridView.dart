@@ -51,7 +51,7 @@ class _motherBoardGridViewScreenState extends State<motherBoardGridViewScreen> {
                   Container(
                     alignment: Alignment.centerLeft,
                     padding: const EdgeInsets.only(left: 20, top: 20, bottom: 10),
-                    child: Text(widget.product + "'lar",
+                    child: Text(widget.product,
                       style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white,),
                     ),
                   ),
@@ -124,7 +124,7 @@ class _motherBoardGridViewScreenState extends State<motherBoardGridViewScreen> {
                       child: ListView(
                         shrinkWrap: true,
                         children: [
-                          searchMotherBoardStreamBuilder(modelName: modelNameText)
+                          searchMotherBoardStreamBuilder(modelName: modelNameText, category: widget.product,)
                         ],
                       )
                   ),
