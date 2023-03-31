@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:merkezledapp/Screens/signInPage.dart';
 import 'package:merkezledapp/authenticationService.dart';
+import 'package:merkezledapp/main.dart';
 import 'package:provider/provider.dart';
 
 class signUpScreen extends StatefulWidget {
@@ -84,8 +85,7 @@ class _signUpScreenState extends State<signUpScreen> {
               ),
               onPressed: () {
                   context.read<AuthenticationService>().signUp(email: email.text, password: password.text);
-                  context.read<AuthenticationService>().verifyUser();
-                  context.read<AuthenticationService>().signOut();
+                  print("KAYIT OLAN KULLANICI" + (FirebaseAuth.instance.currentUser.toString()));
                   showAlertDialog(context);
               },
               child: Text("KAYIT OL",
@@ -117,16 +117,17 @@ showAlertDialog(BuildContext context) {
   Widget okButton = ElevatedButton(
     child: Text("Tamam"),
     onPressed: () {
+      context.read<AuthenticationService>().signOut();
       Navigator.of(context).pop();
       Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const loginPage()));
+          MaterialPageRoute(builder: (context) => AuthenticationWrapper()));
     },
   );
 
   // Create AlertDialog
   AlertDialog alert = AlertDialog(
     title: Text("Hesabınız Oluşturuldu!"),
-    content: Text("Mail adresinize gelen linki onaylandıktan sonra giriş yapabilirsiniz."),
+    content: Text("Mail adresinize gelen linki onayladıktan sonra giriş yapabilirsiniz."),
     actions: [
       okButton,
     ],

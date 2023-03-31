@@ -8,17 +8,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:795034514417:android:63c34f57f90df733204a50",
+        "mobilesdk_app_id": "1:795034514417:android:4dda979eed72adee204a50",
         "android_client_info": {
-          "package_name": "com.example.merkezledapp"
+          "package_name": "com.merkez.merkezledapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "795034514417-5fa3miu5rj2qb8600qbc63tl2uhd3c0t.apps.googleusercontent.com",
+          "client_id": "795034514417-1d966q4pekoskjp6e5rdv2o7ju46hq2f.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.merkezledapp",
+            "package_name": "com.merkez.merkezledapp",
             "certificate_hash": "be33b5b2636f177ba095b2c2080ad2dd06b5a5d3"
           }
         },

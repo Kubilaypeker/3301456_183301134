@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:merkezledapp/Screens/homePage.dart';
 import 'package:merkezledapp/Screens/signInPage.dart';
 import 'package:merkezledapp/authenticationService.dart';
@@ -45,8 +46,13 @@ class AuthenticationWrapper extends StatelessWidget { // to check user signed in
   Widget build(BuildContext context) {
     final firebaseUser = context.watch<User?>();
 
-    if (firebaseUser != null) {
+    if (firebaseUser != null && firebaseUser.emailVerified == true) {
       return const productPreviewPage();
+    }
+    else if(firebaseUser?.emailVerified == false) {
+      Fluttertoast.showToast(msg: "E-mail adresinizi onaylayın.");
+      context.read<AuthenticationService>().verifyUser();
+      context.read<AuthenticationService>().signOut();
     }
     return const loginPage();
   }

@@ -37,12 +37,13 @@ class AuthenticationService {
   }
 
   Future<void> verifyUser() async {
-    FirebaseAuth.instance.currentUser!.sendEmailVerification();
+    FirebaseAuth.instance.currentUser?.sendEmailVerification();
   }
 
   Future<String?> signUp({required String email, required String password}) async{
     try{
       await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
+      _firebaseAuth.currentUser?.sendEmailVerification();
       print("kullnıcı: $_firebaseAuth.currentUser");
       return "Kayıt Oldunuz";
     } on FirebaseAuthException catch (e) {
