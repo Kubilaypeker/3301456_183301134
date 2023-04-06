@@ -2,15 +2,12 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:merkezledapp/Screens/homePage.dart';
 import 'package:merkezledapp/authenticationService.dart';
 import 'package:merkezledapp/main.dart';
 import 'package:merkezledapp/widgets/drawerWidget.dart';
 import 'package:merkezledapp/widgets/searchBarStreamBuilder.dart';
-import 'package:merkezledapp/widgets/searchingPreviewWidget.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:merkezledapp/widgets/scrollViewWidget.dart';
@@ -106,71 +103,39 @@ class _productPreviewPageState extends State<productPreviewPage> {
         }
       ),
               ),
-              scrollView(
-                marka: "Arçelik",
-              ),
+              scrollView(marka: "Arçelik",),
               scrollView(marka: "Altus"),
-              scrollView(
-                marka: "Awox",
-              ),
+              scrollView(marka: "Awox",),
               scrollView(marka: "Axen"),
-              scrollView(
-                marka: "Beko",
-              ),
+              scrollView(marka: "Beko",),
               scrollView(marka: "Botech"),
               scrollView(marka: "Finlux"),
               scrollView(marka: "Grundig"),
               scrollView(marka: "Hi-level"),
-              scrollView(
-                marka: "Homstar",
-              ),
+              scrollView(marka: "Homstar",),
               scrollView(marka: "Jameson"),
-              scrollView(
-                marka: "LG",
-              ),
+              scrollView(marka: "LG",),
               scrollView(marka: "NEXON"),
-              scrollView(
-                marka: "Next",
-              ),
-              scrollView(
-                marka: "Nordmande",
-              ),
-              scrollView(
-                marka: "Philips",
-              ),
-              scrollView(
-                marka: "Premier",
-              ),
-              scrollView(
-                marka: "Redline",
-              ),
+              scrollView(marka: "Next",),
+              scrollView(marka: "Nordmande",),
+              scrollView(marka: "Philips",),
+              scrollView(marka: "Premier",),
+              scrollView(marka: "Redline",),
               scrollView(marka: "Regal"),
               scrollView(marka: "Saba"),
-              scrollView(
-                marka: "Samsung",
-              ),
-              scrollView(
-                marka: "Sanyo",
-              ),
+              scrollView(marka: "Samsung",),
+              scrollView(marka: "Sanyo",),
               scrollView(marka: "Seg"),
               scrollView(marka: "Skytech"),
-              scrollView(
-                marka: "Sonny",
-              ),
-              scrollView(
-                marka: "Sunny",
-              ),
+              scrollView(marka: "Sonny",),
+              scrollView(marka: "Sunny",),
               scrollView(marka: "Techwood"),
               scrollView(marka: "Telefox"),
               scrollView(marka: "Telefunken"),
               scrollView(marka: "Toshiba"),
-              scrollView(
-                marka: "Vestel",
-              ),
+              scrollView(marka: "Vestel",),
               scrollView(marka: "WOON"),
-              scrollView(
-                marka: "Yumatu",
-              ),
+              scrollView(marka: "Yumatu",),
               ]
           ),
                   ),

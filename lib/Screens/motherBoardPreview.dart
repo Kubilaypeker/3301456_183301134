@@ -40,13 +40,15 @@ class motherBoardProduct extends StatelessWidget {
                         child: Image.network(image,)
                     ),
                     Container(
+                      height: 30,
                       padding: EdgeInsets.all(0),
                       child: Text(model,
                         style: GoogleFonts.inter(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 13)
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(0),
+                      height: 20,
+                      padding: EdgeInsets.only(top: 5),
                       child: Text("Fiyat: $fiyat₺",
                           style: GoogleFonts.inter(color: Colors.white70, fontWeight: FontWeight.w500, fontSize: 13)
                       ),
