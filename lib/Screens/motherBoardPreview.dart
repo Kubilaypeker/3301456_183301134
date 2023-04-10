@@ -41,8 +41,8 @@ class motherBoardProduct extends StatelessWidget {
                     ),
                     Container(
                       height: 30,
-                      padding: EdgeInsets.all(0),
-                      child: Text(model,
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: Text("$marka $model",
                         style: GoogleFonts.inter(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 13)
                       ),
                     ),

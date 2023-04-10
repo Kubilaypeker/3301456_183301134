@@ -7,7 +7,7 @@ import 'package:photo_view/photo_view.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class productPage extends StatelessWidget {
-  productPage({Key? key, this.uzunluk, this.image, this.model, this.fiyat, this.kod, this.led, this.set}) : super(key: key);
+  productPage({Key? key, this.uzunluk, this.image, this.model, this.fiyat, this.kod, this.led, this.set,}) : super(key: key);
 
   var fiyat, uzunluk, kod, set, model, image, led;
 
@@ -63,11 +63,6 @@ class productPage extends StatelessWidget {
                 ),
               ),
           Padding(padding: const EdgeInsets.only(left: 10, top: 10,),
-            child: Text("MODEL: $model",
-            style: GoogleFonts.inter(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 14),
-            ),
-          ),
-          Padding(padding: const EdgeInsets.only(left: 10, top: 10,),
             child: Text("KOD: $kod",
               style: GoogleFonts.inter(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 14),
             ),
@@ -112,6 +107,7 @@ class productPage extends StatelessWidget {
               ),
             ),
               ),
+          SizedBox(height: 80,),
             ],
           ),
         ]

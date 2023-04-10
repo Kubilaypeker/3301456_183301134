@@ -89,27 +89,37 @@ class loginPageState extends State<loginPage> {
             ),
           ),
           Container(
+            padding: const EdgeInsets.symmetric(horizontal: 80),
             child: TextButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.grey.shade900)
+              ),
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const signUpScreen()));
               },
-              child: Text("Hesabınız yok mu?",
+              child: Text("Yeni Hesap oluşturun.",
                 style: GoogleFonts.poppins(
-                    color: Color(0xff0E469B)
+                    color: Colors.white,
+                  fontWeight: FontWeight.bold
                 ),
               ),
             ),
           ),
           Container(
+            padding: const EdgeInsets.symmetric(horizontal: 80),
             child: TextButton(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.grey.shade900)
+              ),
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const forgotPassword()));
               },
               child: Text("Şifremi Unuttum",
                 style: GoogleFonts.poppins(
-                    color: Color(0xff0E469B)
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
                 ),
               ),
             ),

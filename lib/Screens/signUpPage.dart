@@ -94,14 +94,19 @@ class _signUpScreenState extends State<signUpScreen> {
             ),
           ),
           Container(
+            padding: const EdgeInsets.symmetric(horizontal: 80),
             child: TextButton(
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.grey.shade900)
+              ),
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const loginPage()));
               },
               child: Text("Hesabınız var ise giriş yapın.",
                 style: GoogleFonts.poppins(
-                    color: Color(0xff0E469B)
+                    color: Colors.white,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ),

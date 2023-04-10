@@ -52,7 +52,7 @@ class motherBoardPage extends StatelessWidget {
               ),
               Container(
                 padding: const EdgeInsets.only(left: 10),
-                child: Text(model,
+                child: Text("$marka $model",
                   style: GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
                 ),
               ),
@@ -60,6 +60,11 @@ class motherBoardPage extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 10, top: 5),
                 child: Text("STOKTA VAR",
                   style: GoogleFonts.inter(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.white70),
+                ),
+              ),
+              Padding(padding: const EdgeInsets.only(left: 10, top: 10,),
+                child: Text("MARKA: $marka",
+                  style: GoogleFonts.inter(color: Colors.white, fontWeight: FontWeight.w500),
                 ),
               ),
               Padding(padding: const EdgeInsets.only(left: 10, top: 10,),
@@ -97,6 +102,7 @@ class motherBoardPage extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: 80,),
             ],
           ),
         ]

@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:merkezledapp/Screens/productPage.dart';
 
 class product extends StatelessWidget {
-  product({Key? key, this.uzunluk, this.set, this.model, this.led, this.kod, this.image, this.fiyat}) : super(key: key);
+  product({Key? key, this.uzunluk, this.set, this.model, this.led, this.kod, this.image, this.fiyat,}) : super(key: key);
 
   var model, kod, set, uzunluk, image, fiyat, led;
 
