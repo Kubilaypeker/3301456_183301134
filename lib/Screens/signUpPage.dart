@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:merkezledapp/Screens/signInPage.dart';
 import 'package:merkezledapp/authenticationService.dart';
 import 'package:merkezledapp/main.dart';
@@ -120,7 +121,9 @@ class _signUpScreenState extends State<signUpScreen> {
 showAlertDialog(BuildContext context) {
   // Create button
   Widget okButton = ElevatedButton(
-    child: Text("Tamam"),
+    child: Text("Tamam",
+    style: GoogleFonts.poppins(fontWeight: FontWeight.w500),
+    ),
     onPressed: () {
       context.read<AuthenticationService>().signOut();
       Navigator.of(context).pop();
@@ -131,8 +134,14 @@ showAlertDialog(BuildContext context) {
 
   // Create AlertDialog
   AlertDialog alert = AlertDialog(
-    title: Text("Hesabınız Oluşturuldu!"),
-    content: Text("Mail adresinize gelen linki onayladıktan sonra giriş yapabilirsiniz."),
+    backgroundColor: const Color(0xFF282828),
+    title: Lottie.network("https://assets3.lottiefiles.com/private_files/lf30_o0calpsv.json"),
+    content: Text("Mail adresinize gelen linki onayladıktan sonra giriş yapabilirsiniz.",
+    style: GoogleFonts.poppins(
+      fontWeight: FontWeight.w500,
+      color: Colors.white
+    ),
+    ),
     actions: [
       okButton,
     ],
