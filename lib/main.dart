@@ -6,13 +6,16 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:merkezledapp/Screens/homePage.dart';
 import 'package:merkezledapp/Screens/signInPage.dart';
 import 'package:merkezledapp/authenticationService.dart';
+import 'package:merkezledapp/firebase_options.dart';
 import 'package:provider/provider.dart';
 import 'Screens/productsGridView.dart';
 import 'Screens/productPreviewPage.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]
   );

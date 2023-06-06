@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>795034514417-d6pi6ccevddnilg26hv7qaf32s4eq77k.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.795034514417-d6pi6ccevddnilg26hv7qaf32s4eq77k</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>795034514417-1d966q4pekoskjp6e5rdv2o7ju46hq2f.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBjlt-d--gCqCaUPCrsohDGZidX3q9JjIs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>795034514417</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.merkezledapp</string>
+	<key>PROJECT_ID</key>
+	<string>merkez-led</string>
+	<key>STORAGE_BUCKET</key>
+	<string>merkez-led.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:795034514417:ios:e7ec8cb9f2af3d27204a50</string>
+	<key>DATABASE_URL</key>
+	<string>https://merkez-led-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>
