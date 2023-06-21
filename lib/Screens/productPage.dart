@@ -1,9 +1,14 @@
 import 'package:easy_image_viewer/easy_image_viewer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:merkezledapp/Screens/path_provider.dart';
+import 'package:merkezledapp/Screens/randomJokeScreen.dart';
+import 'package:merkezledapp/hive_model.dart';
 import 'package:photo_view/photo_view.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class productPage extends StatelessWidget {
@@ -87,6 +92,40 @@ class productPage extends StatelessWidget {
               style: GoogleFonts.inter(color: Colors.white, fontWeight: FontWeight.w500),
             ),
           ),
+          TextButton(
+              onPressed: () {
+                final product = getItemDetails(); // Get the product details
+                context.read<hiveService>().addItemToCart(product);
+                Fluttertoast.showToast(msg: "Ürün Sepetinize Eklendi!");
+              },
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Color.fromRGBO(10, 10, 10, 100))
+              ),
+              child: Text('Sepete Ekle', style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold),
+              )
+          ),
+          TextButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => pathProviderScreen()));
+              },
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.red)
+              ),
+              child: Text('Path_Provider', style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold),
+              )
+          ),
+          TextButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => RandomJokeScreen()));
+              },
+              style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.red)
+              ),
+              child: Text('Biraz da haberlere mi baksak :d', style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.bold),
+              )
+          ),
           Container(
             padding: const EdgeInsets.only(left: 10, top: 5, right: 10),
             child: TextButton(
@@ -113,6 +152,20 @@ class productPage extends StatelessWidget {
         ]
       )
     );
+  }
+
+  Product getItemDetails() {
+    // Replace this with your logic to retrieve the product details
+    // For example, you can have a method that returns a Product instance
+
+    // Sample code to create a Product instance
+    final product = Product();
+    product.marka = model;
+    product.fiyat = fiyat;
+    product.photoUrl = image;
+    product.kod = kod;
+
+    return product;
   }
 }
 

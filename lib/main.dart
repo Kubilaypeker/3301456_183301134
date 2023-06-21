@@ -3,12 +3,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:merkezledapp/Screens/homePage.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:merkezledapp/Screens/signInPage.dart';
 import 'package:merkezledapp/authenticationService.dart';
 import 'package:merkezledapp/firebase_options.dart';
+import 'package:merkezledapp/hive_model.dart';
 import 'package:provider/provider.dart';
-import 'Screens/productsGridView.dart';
 import 'Screens/productPreviewPage.dart';
 
 Future<void> main() async {
@@ -16,6 +17,9 @@ Future<void> main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await Hive.initFlutter();
+  Hive.registerAdapter(ProductAdapter()); // Add this line to register the adapter for the Product class
+  await Hive.openBox('shopping_cart');
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]
   );
@@ -35,6 +39,9 @@ class MyApp extends StatelessWidget {
         ),
         StreamProvider(create: (context) => context.read<AuthenticationService>().authStateChanges, initialData: null,
         ),
+        Provider<hiveService>(
+          create: (_) => hiveService(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -44,7 +51,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class AuthenticationWrapper extends StatelessWidget { // to check user signed in before or not
+class AuthenticationWrapper extends StatelessWidget { // to check user already signed in
   @override
   Widget build(BuildContext context) {
     final firebaseUser = context.watch<User?>();

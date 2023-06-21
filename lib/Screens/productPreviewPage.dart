@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:merkezledapp/Screens/cartScreen.dart';
 import 'package:merkezledapp/authenticationService.dart';
 import 'package:merkezledapp/main.dart';
 import 'package:merkezledapp/widgets/drawerWidget.dart';
@@ -54,6 +55,13 @@ class _productPreviewPageState extends State<productPreviewPage> {
           height: 50,
             child: Image.asset('assets/logo-no-background.png',)),
         actions: <IconButton>[
+          IconButton(onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ShoppingCartScreen(),
+              ),
+            );
+          }, icon: Icon(Icons.shopping_cart_outlined)),
           IconButton(onPressed: () {
             context.read<AuthenticationService>().signOut();
             Navigator.push(
